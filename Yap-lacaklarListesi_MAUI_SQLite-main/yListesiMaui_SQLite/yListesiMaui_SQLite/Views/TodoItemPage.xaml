@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="yListesiMaui_SQLite.Views.TodoItemPage"
+             xmlns:models ="clr-namespace:yListesiMaui_SQLite.Models"
+             x:DataType="models:TodoItem"
+             Title="TodoItemPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="10"
+                             VerticalOptions="StartAndExpand">
+            <Label Text="Başlık" />
+            <Entry Text="{Binding Name}"/>
+            <Label Text="Not"/>
+            <Entry Text="{Binding Notes}"/>
+            <Label Text="Yapıldı"/>
+            <Switch IsToggled="{Binding Done}"/>
+            <Button Text="Kaydet" 
+                    x:Name="OnSave" 
+                    Clicked="OnSave_Clicked"/>
+            <Button Text="Sil" 
+                    x:Name="OnDelete" 
+                    Clicked="OnDelete_Clicked"/>
+            <Button Text="Geri"
+                    x:Name="OnCancel"
+                    Clicked="OnCancel_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

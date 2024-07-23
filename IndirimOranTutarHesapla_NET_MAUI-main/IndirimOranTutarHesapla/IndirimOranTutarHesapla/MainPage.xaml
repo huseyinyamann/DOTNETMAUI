@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:IndirimOranTutarHesapla.ViewModel"
+             x:DataType="vm:FaturaViewModel"
+             xmlns:converter="clr-namespace:IndirimOranTutarHesapla.Converter"
+             x:Class="IndirimOranTutarHesapla.MainPage">
+
+    <StackLayout Orientation="Vertical">
+
+        <Label VerticalOptions="Center" HorizontalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Fiyat: " />
+                    <Span Text="{Binding IndirimMatrahi}" />
+                    <Span Text=" + " />
+                    <Span Text="Kdv Tutari: " />
+                    <Span Text="{Binding KDVTutari}" />
+                    <Span Text=" = " />
+                    <Span Text="{Binding ToplamFiyat}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <ScrollView Orientation="Vertical">
+            <Grid
+    Margin="5"
+    x:DataType="vm:FaturaViewModel"
+    RowSpacing="5"
+    ColumnSpacing="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.7*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0"
+    Text="İndirim 1: %"
+               x:Name="lbl_indirim_1"
+    FontSize="Subtitle"
+    VerticalOptions="Center"
+    Grid.Row="0"/>
+                <Entry
+            Keyboard="Numeric"
+            x:Name="entry_indirimorani_1"
+            AutomationId="entry_indirimorani_1"
+    Text="{Binding IndirimOran1, Mode=TwoWay, Converter={converter:ZeroToEmptyStringConverter}}"
+    Focused="entry_indirimorani_1_Focused"
+    Grid.Column="1"
+    Grid.Row="0"
+    VerticalOptions="Center"
+    TextChanged="entry_indirimorani_1_TextChanged"/>
+                <Entry 
+            Keyboard="Numeric"
+            x:Name="entry_indirim_tutari_1"
+            AutomationId="entry_indirim_tutari_1"
+               Focused="entry_indirim_tutari_1_Focused"
+    Text="{Binding IndirimTutar1, Mode=TwoWay, Converter={converter:ZeroToEmptyStringConverter}}"
+    Grid.Column="2"
+    Grid.Row="0"
+    VerticalOptions="Center"
+    TextChanged="entry_indirim_tutari_1_TextChanged"/>
+
+                <Label Grid.Column="0"
+    Text="İndirim 2: %"
+    FontSize="Subtitle"
+               x:Name="lbl_indirim_2"
+    VerticalOptions="Center"
+    Grid.Row="1"/>
+                <Entry 
+            Keyboard="Numeric"
+            x:Name="entry_indirimorani_2"
+            AutomationId="entry_indirimorani_2"
+               Focused="entry_indirimorani_2_Focused"
+    Text="{Binding IndirimOran2, Mode=TwoWay, Converter={converter:ZeroToEmptyStringConverter}}"
+    Grid.Column="1"
+    Grid.Row="1"
+    VerticalOptions="Center"
+    TextChanged="entry_indirimorani_2_TextChanged"/>
+                <Entry 
+            Keyboard="Numeric"
+            x:Name="entry_indirim_tutari_2"
+            AutomationId="entry_indirim_tutari_2"
+               Focused="entry_indirim_tutari_2_Focused"
+    Text="{Binding IndirimTutar2, Mode=TwoWay, Converter={converter:ZeroToEmptyStringConverter}}"
+    Grid.Column="2"
+    Grid.Row="1"
+    VerticalOptions="Center"
+    TextChanged="entry_indirim_tutari_2_TextChanged"/>
+
+                <Label Grid.Column="0"
+    Text="İndirim 3: %"
+               x:Name="lbl_indirim_3"
+    FontSize="Subtitle"
+    VerticalOptions="Center"
+    Grid.Row="2"/>
+                <Entry 
+            Keyboard="Numeric"
+            x:Name="entry_indirimorani_3"
+            AutomationId="entry_indirimorani_3"
+               Focused="entry_indirimorani_3_Focused"
+    Text="{Binding IndirimOran3, Mode=TwoWay, Converter={converter:ZeroToEmptyStringConverter}}"
+    Grid.Column="1"
+    Grid.Row="2"
+    VerticalOptions="Center"
+    TextChanged="entry_indirimorani_3_TextChanged"/>
+                <Entry 
+            Keyboard="Numeric"
+            AutomationId="entry_indirim_tutari_3"
+            x:Name="entry_indirim_tutari_3"
+    Text="{Binding IndirimTutar3, Mode=TwoWay, Converter={converter:ZeroToEmptyStringConverter}}"
+               Focused="entry_indirim_tutari_3_Focused"
+    Grid.Column="2"
+    Grid.Row="2"
+    VerticalOptions="Center"
+    TextChanged="entry_indirim_tutari_3_TextChanged"/>
+            </Grid>
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>
