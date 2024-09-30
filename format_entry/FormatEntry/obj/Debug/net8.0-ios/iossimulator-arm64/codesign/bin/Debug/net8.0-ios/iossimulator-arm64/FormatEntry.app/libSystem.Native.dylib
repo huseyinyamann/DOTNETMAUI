@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - /Users/mekanhydyrov/Documents/git/DOTNETMAUI/format_entry/FormatEntry/bin/Debug/net8.0-ios/iossimulator-arm64/FormatEntry.app/libSystem.Native.dylib

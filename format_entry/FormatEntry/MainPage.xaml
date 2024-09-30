@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FormatEntry"
+             Title="Tutar"
+             x:Class="FormatEntry.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            HorizontalOptions="Fill"
+            Padding="30,200"
+            VerticalOptions="Start">
+            <Label Text="Tutar"
+                    TextColor="Black"
+                    HorizontalOptions="CenterAndExpand"/>
+            <StackLayout Orientation="Horizontal">
+                <local:NumericEntry FontSize="35"
+                        HorizontalTextAlignment="End"
+                        Keyboard="Numeric"
+                                    WidthRequest="190"
+                                    Placeholder="0"
+                                    BackgroundColor="Transparent"
+                                    PlaceholderColor="gray"/>
+                <Label VerticalOptions="End"
+                       Text=","
+                       TextColor="Gray"
+                       HorizontalTextAlignment="Center"
+                       FontSize="25"/>
+                <local:NumericEntry FontSize="35"
+                        Placeholder="00"
+                        Keyboard="Numeric"
+                                    MaxLength="2"
+                                    PlaceholderColor="Gray"/>
+            </StackLayout>
+            <BoxView HeightRequest="1"
+                     HorizontalOptions="FillAndExpand"
+                     Color="Gray"
+                     VerticalOptions="Start"/>
+
+            <Button  CornerRadius="20"
+                    Text="Devam"
+                    BackgroundColor="BlueViolet"
+                    TextColor="White"
+                    Margin="20,100"/>
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
